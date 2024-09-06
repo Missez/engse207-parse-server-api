@@ -6,7 +6,7 @@ var fs = require('fs');
 // You might need this. Use 'true' or 'false' depending your connection.
 var options = { allowInsecureHTTP: true };
 
-var apiport = 4000;
+var apiport = 8305;
 var dashboard_port = 4001;
 
 var cert_options = {
