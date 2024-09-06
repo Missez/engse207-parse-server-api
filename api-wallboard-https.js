@@ -10,10 +10,10 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
-var apiport = 4000;
+var apiport = 8305;
 
 const config = {
-  databaseURI: 'mongodb://wallboarduser:WB1qazxsw2@10.21.38.147:27017/wallboarddb',
+  databaseURI: 'mongodb://team3_web_labDB:WB1qazxsw2@10.21.43.203:27017/team3_wallboarddb',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'wallboardapi',
   masterKey: process.env.MASTER_KEY || 'wallboardapi', //Add your master key here. Keep it secret!
