@@ -7,7 +7,7 @@ var fs = require('fs');
 var options = { allowInsecureHTTP: true };
 
 var apiport = 8305;
-var dashboard_port = 4001;
+var dashboard_port = 8306;
 
 var cert_options = {
   key: fs.readFileSync('server.key'),
