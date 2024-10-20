@@ -2,3 +2,7 @@
 package-lock.json
 server.crt
 server.key
+dockerfile
+docker-compose.yml
+.dockerignore
+serverkey

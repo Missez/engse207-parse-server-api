@@ -10,17 +10,17 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
-var apiport = 4000;
+var apiport = 8305;
 
 const config = {
-  databaseURI: 'mongodb://wallboarduser:WB1qazxsw2@10.21.38.147:27017/wallboarddb',
+  databaseURI: 'mongodb://wallboarduser:WB1qazxsw2@mongo:27017/wallboarddb',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'wallboardapi',
   masterKey: process.env.MASTER_KEY || 'wallboardapi', //Add your master key here. Keep it secret!
   clientKey: 'wallboardapi',
   javascriptKey: 'wallboardapi',
-  serverURL: 'https://192.168.56.1:' + apiport + '/api', // Don't forget to change to https if needed
-  publicServerURL: 'https://192.168.56.1:' + apiport + '/api',
+  serverURL: 'https://localhost:' + apiport + '/api', // Don't forget to change to https if needed
+  publicServerURL: 'https://localhost:' + apiport + '/api',
   liveQuery: {
     classNames: ['OnlineAgentLists', 'WallboardBanners','CallAgentSummaries'], // List of classes to support for query subscriptions
   },
@@ -39,8 +39,8 @@ const mountPath = '/api';
 const api = new ParseServer(config);
 
 var options = {
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.crt')
+  key: fs.readFileSync('./serverkey/server.key'),
+  cert: fs.readFileSync('./serverkey/server.crt')
 };
 
 app.use(mountPath, api);
