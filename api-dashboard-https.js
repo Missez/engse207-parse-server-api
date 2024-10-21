@@ -10,14 +10,14 @@ var apiport = 8305;
 var dashboard_port = 8306;
 
 var cert_options = {
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.crt')
+  key: fs.readFileSync('./serverkey/server.key'),
+  cert: fs.readFileSync('./serverkey/server.crt')
 };
 
 var trustProxy = true;
 var dashboard = new ParseDashboard({
   "apps": [{
-    "serverURL": 'https://192.168.56.10:' + apiport + '/api',
+    "serverURL": 'https://127.0.0.1:' + apiport + '/api',
     "appId": 'wallboardapi',
     "masterKey": 'wallboardapi',
     "appName": 'wallboardapi',
